@@ -1,0 +1,813 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "_mixins/_placeholder"
+
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #fff
+body input:required:valid,
+body textarea:required:valid
+	color: #fff
+a
+	&:focus
+		outline: none
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+.fixed
+	position: fixed
+	top: 0px
+	display: block
+	z-index: 99999999
+	width: 100%
+	box-shadow: 0px 13px 24px -12px rgba(darken($accent, 5%), 1)
+	transition: .2s ease
+	animation: yourCustomAnimation .5s;
+	animation-fill-mode: both
+@keyframes yourCustomAnimation
+	from
+		top: -100px
+		opacity: 0
+
+	to
+		top: 0px
+		transform: scale(1)
+		opacity: 1
+
+
+.header
+	&__line
+		background-color: $accent
+		padding: 40px 0
+	&__logo
+		font-family: ProximaNovaBold
+		letter-spacing: 5px
+		font-size: rem(20px)
+		line-height: 20px
+		color: #fff
+		&_inverse
+			color: #fff
+			font-size: rem(30px)
+			text-align: center
+			padding: 20px 10px
+	&__nav
+		&__li
+			display: inline-block
+			&__a
+				color: #fff
+				font-size: rem(20px)
+				font-family: ProximaNovaRegular
+				text-transform: uppercase
+				margin: 0 15px
+				position: relative
+				z-index: 1
+				width: 100%
+				&:after
+					content: ' '
+					transition: .5s ease
+				&:focus
+						color: white
+						text-decoration: none
+						cursor: pointer
+						&:after
+							content: ' '
+							width: calc(100% + 12px)
+							height: 2px
+							background-color: #515151
+							position: absolute
+							top: 7px
+							left: -6px
+							z-index: -1
+							opacity: .5
+				&:hover
+					color: white
+					text-decoration: none
+					cursor: pointer
+					&:after
+						content: ' '
+						width: calc(100% + 12px)
+						height: 2px
+						background-color: #515151
+						position: absolute
+						top: 7px
+						left: -6px
+						z-index: -1
+						opacity: .5
+	&__social
+		display: inline-block
+		i
+			color: white
+			font-size: rem(25px)
+			padding: 0 7.5px
+			transition: .2s ease
+			&:hover
+				opacity: .8
+	&__button
+		font-size: rem(25px)
+		font-family: BebasNeueBold
+		color: #fff
+		border: 3px solid #fff
+		padding: 15px 36px
+		position: relative
+		transition: .2s ease
+		&:before
+			content: ' ';
+			width: 38px;
+			height: 3px;
+			background: #fff;
+			position: absolute;
+			left: -21px;
+			top: 19px;
+			transition: .2s ease
+		&:hover
+			text-decoration: none
+			color: $accent
+			cursor: pointer
+			background: white
+			&:before
+				background: $accent
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+	width: 40px
+	height: 4px
+	background-color: #fff
+	height: 3px
+
+.hamburger
+	padding: 0
+
+.hamburger, .hamburger-inner, .hamburger-box
+	&:focus
+		outline: none
+.drawer-open .drawer-nav
+	min-width: 320px
+	background: $accent
+.drawer-menu
+	height: 70%
+	display: flex
+	justify-content: unsafe
+	justify-content: space-between
+	flex-direction: column
+.drawer
+	&-menu
+		padding-top: 38px
+	&__menu
+		&__li
+			text-align: center
+			&:last-child
+				a
+				 font-family: ProximaNovaBold
+			&__a
+				font-size: rem(25px)
+				color: white
+				font-family: ProximaNovaRegular
+				text-transform: uppercase
+				position: relative
+				&:hover
+					color: darken($accent, 30%)
+					text-decoration: none
+.statue
+	background-image: url("../img/background_state.png")
+	min-height: 811px
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center center
+	text-align: center
+	position: relative
+	&__column
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+	&__logo
+		max-width: 600px
+		width: 95%
+		height: auto
+		&__spons
+			position: absolute
+			top: 120px
+			&_left
+				left: 0px
+			&_right
+				right: 0px
+				top: 100px
+
+	&__block
+		&__logo
+			margin: auto
+			display: block
+			width: 95%
+			position: absolute
+			top: 108px
+		&__img
+			position: absolute
+			top: 258px
+			width: 95%
+			margin: auto
+			&__item
+				max-width: 334px
+				width: 100%
+	&__gradient
+		width: 100%
+		background: linear-gradient(to top, $accent, rgba($accent, .7), rgba($accent, 0))
+		height: 200px
+		position: absolute
+		bottom: 0
+		z-index: 9
+	&__address
+		position: absolute
+		bottom: 0
+		z-index: 1
+		&_left
+			left: 50px
+		&_right
+			right: 50px
+	&__text
+		text-align: left
+		position: absolute
+		right: 0px
+		top: 138px
+		color: #fff
+		font-family: BebasNeueBook
+		letter-spacing: 5px
+		span
+			font-family: BebasNeueBold
+			border-bottom: 2px solid #fff
+	&__link
+		position: absolute
+		bottom: 100px
+		white-space: nowrap
+		font-family: ProximaNovaRegular
+		letter-spacing: 3px
+		color: white
+		text-align: center
+		left: calc(50% - 120px)
+		font-size: rem(20px)
+		text-transform: uppercase
+		z-index: 10
+		border-bottom: 1px solid rgba(#fff, .8)
+		&:hover
+			text-decoration: none
+			color: darken(#fff, 5%)
+			cursor: pointer
+			border-bottom: 1px solid rgba(#fff, .7)
+		&:focus
+			text-decoration: none
+			color: white
+.news
+	background: $accent
+	padding: 40px 0
+	position: relative
+	&__ophohs
+		background: url(../img/opohs.png)
+		width: 247px
+		height: 100%
+		background-repeat: no-repeat
+		position: absolute
+		right: 0px
+		bottom: -50%
+		z-index: 10
+	&__mac
+		position: relative
+		top: -50px
+		z-index: 10
+		width: 100%
+		padding: 0 10px
+	&__h2
+		color: #fff
+		letter-spacing: 5px
+		font-family: ProximaNovaExtrabold
+		font-size: rem(40px)
+		text-transform: uppercase
+		span
+			font-family: ProximaNovaRegular
+			position: relative
+			position: relative
+			z-index: 1
+			width: 100%
+			&:after
+				content: ' '
+				width: calc(100% + 7px)
+				height: 2px
+				background-color: #000
+				position: absolute
+				top: 14px
+				left: -6px
+				z-index: -1
+				opacity: .5
+	&__p
+		margin-top: 50px
+		font-family: ProximaNovaRegular
+		font-size: rem(23px)
+		color: #fff
+		line-height: 1.5
+	&__footer
+		margin-top: 50px
+		&__linkvk
+			font-size: rem(25px)
+			font-family: BebasNeueRegular
+			color: #000
+			border: 3px solid #202020
+			padding: 6px 27px
+			position: relative
+			transition: .2s ease
+			letter-spacing: 5px
+			&:hover
+				background: #202020
+				color: $accent
+				text-decoration: none
+				cursor: pointer
+		&__linkgroup
+			font-family: ProximaNovaLight
+			font-size: rem(20px)
+			padding: 6px 20px
+			color: #000
+			position: relative
+			&:after
+				content: ' '
+				width: 20px
+				height: 2px
+				background-color: #000
+				position: absolute
+				top: 14px
+				right: -12px
+				opacity: .5
+			&:hover
+				color: darken($accent, 35%)
+				text-decoration: none
+				cursor: pointer
+.bloggers
+	overflow: hidden
+	background: $accent
+	&__h2
+		font-family: BebasNeueBold
+		color: #fff
+		font-size: rem(40px)
+		text-align: center
+		letter-spacing: 5px
+		padding: 20px 0
+	.col-md-4
+		padding: 0
+	&__item
+		width: 100%
+		background-size: cover
+		position: relative
+		overflow: hidden
+		transition: .2s ease
+		text-shadow: 2px 2px 1px rgb(42, 154, 144)
+		&:hover
+			filter: sepia(100%) contrast(100%) saturate(200%) hue-rotate(296deg)
+		&__name
+			font-size: rem(30px)
+			color: #fff
+			font-family: ProximaNovaSemibold
+			position: absolute
+			bottom: 20px
+			right: 20px
+			letter-spacing: 2px
+.dress
+	background: $accent
+	padding: 40px 0
+	&__footer
+		font-family: FuturaPTMedium
+		font-size: rem(25px)
+		text-transform: uppercase
+		text-align: center
+		padding: 20px 0
+		color: #fff
+	.owl-carousel .owl-item
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 100%
+		min-height: 45vh
+		vertical-align: middle
+		img
+			width: 94%
+			margin: 0
+
+	&__relative
+		position: relative
+	&__h2
+		font-family: BebasNeueBold
+		color: #fff
+		font-size: rem(40px)
+		text-align: center
+		letter-spacing: 5px
+	&__slider
+		padding: 0 30px
+		&__prev, &__next
+			color: #202020
+			font-size: rem(60px)
+			position: absolute
+			top: calc(50% - 20px)
+			&:hover
+				cursor: pointer
+		&__next
+			right: 0
+		&__prev
+			left: -5px
+
+.tshirt
+	img
+		width: 100%
+	&__text
+		padding-top: 14%
+		&__head
+			color: #202020
+			font-family: BebasNeueRegular
+			letter-spacing: 5px
+			font-size: rem(60px)
+		&__typecl
+			font-family: BebasNeueRegular
+			font-size: rem(30px)
+			letter-spacing: 5px
+		&__color
+			padding: 25px 0
+			&__btn
+				padding: 8px 18px
+				border-radius: rem(50px)
+				position: relative
+				z-index: 9
+				margin-right: 18px
+				&.active
+					&:after
+						content: ' '
+						height: 44px
+						width: 44px
+						background: $accent
+						border-radius: rem(50px)
+						position: absolute
+						top: -4px
+						left: -4px
+						right: -6px
+						bottom: -1px
+						z-index: -1
+				&_white
+					background: #fff
+					&.active
+						&:after
+							border: 1px solid #fff
+				&_black
+					background: #202020
+					&.active
+						&:after
+							border: 1px solid #202020
+				&_red
+					background: #961023
+					&.active
+						&:after
+							border: 1px solid #961023
+				&_pink
+					background: #e82881
+					&.active
+						&:after
+							border: 1px solid #e82881
+				&_orange
+					background: #d68101
+					&.active
+						&:after
+							border: 1px solid #d68101
+		&__link
+			font-size: rem(25px)
+			font-family: BebasNeueRegular
+			color: #fff
+			border: 3px solid #fff
+			padding: 6px 27px
+			position: relative
+			transition: .2s ease
+			letter-spacing: 5px
+			display: inline-block
+			margin-top: 40px
+			&:hover
+				background: #fff
+				color: $accent
+				text-decoration: none
+				cursor: pointer
+		&__small__text
+			font-family: FuturaPTMedium
+			opacity: .5
+			padding-top: 20px
+.container
+	&:focus
+		outline: none
+
+.slick-slide
+	&:focus
+		outline: none
+.slick-current
+	&:focus
+		outline: none
+.slick-active
+	&:focus
+		outline: none
+
+.calendar
+	background: $accent
+	&__head
+		font-family: BebasNeueBold
+		color: #fff
+		font-size: rem(40px)
+		text-align: center
+		letter-spacing: 5px
+	&__table
+		width: 100%
+		&__head
+			border-bottom: 1px solid rgba(#fff, 0.3)
+			&__line
+				color: #fff
+				font-family: BebasNeueRegular
+				opacity: .7
+				font-size: rem(25px)
+				padding: 15px 10px
+				letter-spacing: 2px
+		&__lines
+			border-bottom: 1px solid rgba(#fff, 0.3)
+			&__line
+				color: #fff
+				font-family: BebasNeueRegular
+				font-size: rem(30px)
+				padding: 13px 10px
+				letter-spacing: 2px
+				width: 40%
+				&_link
+					a
+						color: #fff
+						&:hover
+							text-decoration: none
+							opacity: .8
+							cursor: pointer
+							.fa
+								opacity: .8
+					.fa
+						font-size: rem(25px)
+				&_city
+					span
+						position: relative
+						&:after
+							content: ''
+							width: 80px
+							height: 2px
+							background: $third
+							position: absolute
+							top: calc(50% - 4px)
+							left: calc(100% + 25px)
+							z-index: 1
+.contacts
+	background: $accent
+	padding: 80px 0 80px
+	position: relative
+	&__opohs
+		background: url(../img/opohs__foter.png)
+		width: 160px
+		height: 76%
+		background-repeat: no-repeat
+		background-size: cover
+		position: absolute
+		left: 0
+		bottom: -65px
+		z-index: 10
+	&__head
+		font-family: BebasNeueBold
+		color: #fff
+		font-size: rem(40px)
+		text-align: center
+		letter-spacing: 5px
+	&__info
+		font-family: BebasNeueBold
+		color: #fff
+		font-size: rem(22px)
+		letter-spacing: 3px
+		padding: 20px 0
+		&__relative
+			position: relative
+		&__yellow
+			color: $third
+			margin-bottom: 30px
+			white-space: nowrap
+		&__right
+			position: absolute
+			right: 0
+	&__form
+		padding-top: 100px
+		position: relative
+		&__statue
+			width: 20%
+			max-width: 230px
+			position: absolute
+			left: 7%
+			bottom: 0
+		&__formea
+			text-align: center
+			position: relative
+			z-index: 1
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-direction: column
+			&:before
+				content: url(../img/thunder__form.png)
+				position: absolute
+				left: calc(50% - 130px)
+				top: -100px
+				z-index: -1
+			&__head
+				font-family: BebasNeueRegular
+				letter-spacing: 2px
+				color: #fff
+			&__input
+				background: none
+				color: #fff
+				border: none
+				border-bottom: 2px solid rgba(#fff, 0.5)
+				width: 100%
+				font-family: BebasNeueBold
+				letter-spacing: 3px
+				padding: 11px 0
+				@include placeholder
+					color: rgba(#fff, 0.5)
+				&:focus
+					outline: none
+			&__checkbox
+				padding: 20px 0
+				font-family: BebasNeueRegular
+				font-size: rem(20px)
+				letter-spacing: 2px
+				color: white
+				input
+					position: relative
+					left: -10px
+					&:after
+						content: ''
+						position: absolute
+						top: -4px
+						left: -4px
+						right: 0
+						bottom: 0
+						background: $accent
+						border-radius: rem(50px)
+						width: 20px
+						height: 20px
+						border: 2px solid #fff
+						transition: .2s ease
+				input:hover, label
+					cursor: pointer
+				input:checked
+					&:after
+						content: "\f00c"
+						background: #fff
+						color: $accent
+						font-size: rem(20px)
+						line-height: 18px
+						padding-left: 2px
+						font-family: FontAwesome
+			&__button
+				font-size: rem(25px)
+				font-family: BebasNeueRegular
+				color: #fff
+				background: none
+				border: 3px solid #fff
+				padding: 6px 47px
+				position: relative
+				transition: .2s ease
+				letter-spacing: 5px
+				&:focus
+					outline: none
+				&:hover
+					background: #fff
+					color: $accent
+					text-decoration: none
+					cursor: pointer
+	&__quesand
+		&__flex
+			font-family: BebasNeueRegular
+			color: #fff
+			font-size: rem(16px)
+			letter-spacing: 3px
+			text-align: right
+			padding-top: 100%
+			span
+				font-size: rem(22px)
+.footer
+	background: $third
+	text-align: center
+	position: relative
+	padding: 10px 0
+	text-transform: uppercase
+	font-family: ProximaNovaSemibold
+	letter-spacing: 1px
+	font-size: rem(15px)
+	span
+		padding: 20px 0
+	&__media__logo
+		padding: 0 20px
+.top
+	position: fixed
+	bottom: 25px
+	background-color: lighten($accent, 30%)
+	border-radius: 10em
+	color: #666
+	font-size: 26px
+	width: 50px
+	height: 50px
+	line-height: 50px
+	text-align: center
+	cursor: pointer
+	transition: all .25s ease
+	right: -100px
+	z-index: 12
+	opacity: .5
+	&.active
+		right: 30px
+	i
+		line-height: 0
+	&:hover
+		color: #fff
+		background-color: $accent
+		opacity: 1
+
+
+.success
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	color: white
+	text-transform: uppercase
+	font-family: BebasNeueBold
+	letter-spacing: 5px
+	display: none
+	z-index: 10
+	span
+		margin: auto
+		font-size: 21px
+	& ~ *
+		transition: all .5s ease
+	&.active
+		& ~ *
+			display: inline-block
+			opacity: .5
+			filter: blur(1px)
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	opacity: 1
+	background: $accent
+	z-index: 9999
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+.pulse
+	position: relative
+	left: calc(50% - 150px)
+	top: 40vh
+	width: 300px
+	animation: pulse 2s infinite
+@-webkit-keyframes pulse
+	0%
+	 transform: scale(0.7)
+	50%
+	 transform: scale(1)
+	100%
+	 transform: scale(0.7)
+
+@import "media" // Всегда в конце

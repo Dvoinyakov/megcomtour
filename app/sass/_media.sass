@@ -1,0 +1,210 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+  .statue
+    &__logo
+      &__spons
+        &_left
+          width: 170px
+  .header
+        &__logo
+          font-size: rem(18px)
+          &_inverse
+            font-size: rem(30px)
+        &__nav
+            &__li
+                &__a
+                  margin: 0 10px
+        &__social
+            i
+              padding: 0 2px
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  .fixed
+   position: relative
+  .contacts
+    &__info
+      &__yellow
+         white-space: normal
+  .contacts__form__statue
+        display: none
+  .contacts__quesand__flex
+    padding-top: 7%
+  .contacts__opohs
+    display: none
+
+  .calendar
+    &__table
+      &__lines
+        &__line
+          width: 10%
+  .statue
+    padding: 20px 0
+    &__address
+      &_left
+        left: 10px
+      &_right
+        right: 10px
+
+    &__logo
+      &__spons
+          top: 22px
+          &_left
+            left: 10px
+            width: 150px
+          &_right
+            right: 10px
+            width: 100px
+            top: 4px
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+  .footer
+    span
+      display: block
+  .contacts
+    &__info
+      text-align: center
+      &__block
+          margin-bottom: 50px
+      &__yellow
+        white-space: normal
+      &__right
+        position: relative
+  .dress
+    &__mobile
+      &_qu
+        font-family: BebasNeueRegular
+        color: white
+        margin-bottom: 20px
+        text-align: center
+    &__slider
+      &__prev, &__next
+        opacity: .5
+      &__next
+          right: 3px
+      &__prev
+          left: 3px
+    &__footer
+      padding: 10px 0 0
+  .news
+    text-align: center
+    padding: 0 0 20px
+    &__ophohs
+      width: 150px
+  .statue
+      &__address
+        display: none
+  .tshirt__text
+    padding-top: 10px
+    text-align: center
+
+  .dress .owl-carousel .owl-item
+      min-height: 50vh
+  .calendar
+    &__table
+      &__lines
+        &__line
+          font-size: rem(25px)
+          &_city
+            span
+              &:after
+                content: none
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+
+  .contacts__form__formea__checkbox
+    font-size: rem(15px)
+  .contacts__form__formea__checkbox input
+    top: 3px
+  .contacts
+    &__form
+      padding-top: 0px
+      &__formea
+       &:before
+        content: none
+  .dress .owl-carousel .owl-item
+    min-height: 30vh
+  .drawer-open .drawer-nav
+    min-width: 280px
+  .header
+    &__logo
+      font-size: rem(25px)
+  .statue
+    &__text
+      left: 4px
+      right: 0
+  .statue
+    &__logo
+     padding: 0 23px
+  .header
+      &__line
+        padding: 20px 0
+  .news
+    &__ophohs
+      display: none
+    &__footer
+      &__linkgroup
+        display: block
+        padding-top: 20px
+        &:after
+          content: none
+  .hamburger
+    padding: 8px 0 0
+  .calendar
+    &__table
+      &__lines
+        &__line
+          font-size: rem(20px)
+          &_city
+            span
+              &:after
+                content: none
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+  .statue__text
+      top: -58px
+      text-align: center
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+  	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
+@media not all and (min-resolution:.001dpcm)
+  .dress .owl-carousel .owl-item
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    min-height: 40vh
+    vertical-align: middle
+    img
+        width: 94%
+        margin: 0
